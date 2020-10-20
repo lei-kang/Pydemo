@@ -17,6 +17,7 @@ class TestCalc():
     ], ids=['int_case_pass', 'int_case_fail', 'float_case_pass', 'minus_case_pass', 'zero_case_pass'])
     def test_add(self, a, b, expect):
         result = self.calc.add(a, b)
+        print(123123121)
         assert result == expect
 
     @pytest.mark.parametrize("a,b,expect",[
