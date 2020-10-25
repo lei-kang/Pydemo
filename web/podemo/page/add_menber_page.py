@@ -14,5 +14,5 @@ class AddMenberPage(BasePage):
         self.find(By.CSS_SELECTOR, "#username").send_keys(username)
         self.find(By.CSS_SELECTOR, "#memberAdd_acctid").send_keys(acctid)
         self.find(By.CSS_SELECTOR,"#memberAdd_phone").send_keys(phone)
-        self.find(By.CSS_SELECTOR,".qui_btn ww_btn js_btn_save").click()
+        self.find(By.CSS_SELECTOR,".js_btn_save").click()
         return True

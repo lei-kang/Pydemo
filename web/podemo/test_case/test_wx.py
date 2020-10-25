@@ -15,9 +15,6 @@ class TestWx():
     def setup(self):
         self.index = IndexPage()
 
-    def teardown(self):
-        sleep(5)
-        self.index.driver.close()
 
     # 测试添加练习人
     # @pytest.mark.parametrize("username,acctid,phone",[["测试","123","123"]])
