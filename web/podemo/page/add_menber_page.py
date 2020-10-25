@@ -16,3 +16,6 @@ class AddMenberPage(BasePage):
         self.find(By.CSS_SELECTOR,"#memberAdd_phone").send_keys(phone)
         self.find(By.CSS_SELECTOR,".js_btn_save").click()
         return True
+
+    def get_menber(self):
+        pass
