@@ -17,5 +17,23 @@ class AddMenberPage(BasePage):
         self.find(By.CSS_SELECTOR,".js_btn_save").click()
         return True
 
-    def get_menber(self):
-        pass
+    def get_member(self, value):
+        # 验证联系人添加成功
+        total_list = []
+        while True:
+            contactlist = self.finds(By.CSS_SELECTOR, '.member_colRight_memberTable_td:nth-child(2)')
+            titlelist = [element.get_attribute("title") for element in contactlist]
+            print(titlelist)
+            if value in titlelist:
+                return True
+            total_list = total_list + titlelist
+
+            result: str = self.find(By.CSS_SELECTOR, ".ww_pageNav_info_text").text
+            num, total = result.split('/', 1)
+
+            if int(num) == int(total):
+                return False
+            else:
+                self.find(By.CSS_SELECTOR, ".ww_commonImg_PageNavArrowRightNormal").click()
+
+        return total_list

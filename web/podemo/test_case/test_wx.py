@@ -24,3 +24,4 @@ class TestWx():
         phone ="123"
         add = self.index.goto_menber()
         assert add.add_menber(username,acctid,phone)
+        assert username in add.get_member(username)
